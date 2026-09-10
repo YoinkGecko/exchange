@@ -33,4 +33,12 @@ namespace exchange::core{
         ICEBERG,
         POST_ONLY,
     };
+
+    enum class OrderStatus : std::uint8_t{
+        NEW,
+        ACCEPTED,
+        PARTIALLY_FILLED,
+        FILLED,
+        CANCELED,
+    }
 }
