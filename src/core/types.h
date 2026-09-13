@@ -58,6 +58,6 @@ namespace exchange::core{
         while(length < symbol.size() && symbol[length]!='\0'){
             ++length;
         }
-        return std::string_view(symbol.data,length);
+        return std::string_view(symbol.data(),length);
     }
 }
