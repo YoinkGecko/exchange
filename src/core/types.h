@@ -52,4 +52,12 @@ namespace exchange::core{
         }
         return symbol;
     }
+
+    constexpr std::string_view symbol_view(const Symbol &symbol) noexcept {
+        std::size_t length = 0;
+        while(length < symbol.size() && symbol[length]!='\0'){
+            ++length;
+        }
+        return std::string_view(symbol.data,length);
+    }
 }
