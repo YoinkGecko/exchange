@@ -60,4 +60,16 @@ namespace exchange::core{
         }
         return std::string_view(symbol.data(),length);
     }
+
+    struct SymbolLess {
+        constexpr bool operator()(
+            const Symbol& lhs,
+            const Symbol& rhs
+        ) const noexcept {
+            return std::lexicographical_compare(
+                lhs.begin(), lhs.end(),
+                rhs.begin(), rhs.end()
+            );
+        }
+    };
 }
