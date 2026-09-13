@@ -41,4 +41,6 @@ namespace exchange::core{
         FILLED,
         CANCELED,
     }
+
+    using Symbol =  std::array<char,8>;
 }
