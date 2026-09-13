@@ -43,4 +43,13 @@ namespace exchange::core{
     }
 
     using Symbol =  std::array<char,8>;
+
+    constexpr Symbol make_symbol(std::string_view text) noexcept{
+        Symbol symbol{};
+        const auto length = std::min(symbol.size(),text.size());
+        for(std::size_t index = 0; index < length; ++index){
+            symbol[index] = text[index];
+        }
+        return symbol;
+    }
 }
